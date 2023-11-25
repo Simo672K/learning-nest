@@ -1,8 +1,8 @@
-import { Controller, Get, Param } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 
 @Controller('book')
 export class BookController {
-  @Get("")
+  @Get()
   getAllBooks(){
     return "List of all books";
   }
@@ -21,4 +21,10 @@ export class BookController {
       }
     }
   }
+
+  @Post("new")
+  newBook(@Body() data:any){
+    return data;
+  }
+
 }
