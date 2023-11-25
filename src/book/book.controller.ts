@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { CreateNewBookDTO } from "./dto/createNewBook";
 
 @Controller('book')
 export class BookController {
@@ -14,7 +15,7 @@ export class BookController {
       bookData:{
         bookTitle: "Harry Potter",
         bookChapters: 25,
-        bookPublisher: "Jhon Doe",
+        bookAuthor: "Jhon Doe",
         bookTags: ["Action", "Fantasy", "Adventure"],
         bookTotalReads: 18520,
         bookRate: 4.8
@@ -23,7 +24,7 @@ export class BookController {
   }
 
   @Post("new")
-  newBook(@Body() data:any){
+  newBook(@Body() data: CreateNewBookDTO){
     return data;
   }
 
