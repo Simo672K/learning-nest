@@ -12,6 +12,11 @@ export class BookController {
     return this.bookService.getAllBooks();
   }
 
+  @Get("featured")
+  getFeaturedBooks(){
+    return this.bookService.getFeaturedBook();
+  }
+
   @Get(":id")
   getBook(@Param("id") id:string){
     return this.bookService.getBook(id);

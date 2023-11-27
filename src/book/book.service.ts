@@ -58,4 +58,8 @@ export class BookService {
   getAllBooks() {
     return this.books;
   }
+
+  getFeaturedBook(){
+    return "Featured books"
+  }
 }
